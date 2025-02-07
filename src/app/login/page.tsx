@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import SignIn from "../ui/sign-in";
 
 export const metadata: Metadata = {
@@ -9,16 +8,8 @@ export const metadata: Metadata = {
 export default function LoginPage() {
   return (
     <div>
-      <div>This is login page</div>
-      <div className="w-48">
-        <Link
-          href="/"
-          className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-400 md:text-base"
-        >
-          <span>Ana sayfa</span>
-        </Link>
-      </div>
-      <div className="w-48 mt-16">
+      <div className="mt-4 flex justify-center">This is login page</div>
+      <div className="mt-8 flex justify-center">
         <SignIn />
       </div>
     </div>

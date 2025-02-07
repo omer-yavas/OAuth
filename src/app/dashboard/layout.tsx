@@ -1,4 +1,4 @@
-import HeaderNav from "../ui/headerNav";
+import HeaderNav from "../ui/dashboard/headerNav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

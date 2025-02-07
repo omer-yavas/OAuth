@@ -1,4 +1,15 @@
+"use client";
+
+import Button from "./ui/button";
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/login");
+  };
+
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="mx-auto grid max-w-(--breakpoint-xl) px-4 py-8 text-center lg:py-16">
@@ -10,6 +21,9 @@ export default function Home() {
             Building with Next.js, Auth.js, Google OAuth, and GitHub OAuth! I
             love creating modern, flexible, and secure web applications.
           </p>
+        </div>
+        <div className="flex justify-center">
+          <Button text="Get Started" onClick={handleClick} />
         </div>
       </div>
     </section>
