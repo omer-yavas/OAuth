@@ -1,12 +1,18 @@
 import { auth, signOut } from "@/auth";
 
-async function HeaderNav() {
+interface HeaderNavProps {
+  className?: string;
+}
+
+async function HeaderNav(props: HeaderNavProps) {
   const session = await auth();
 
   const user = session?.user;
 
   return (
-    <div className="flex justify-between items-center w-screen px-16 bg-green-400 text-white h-24">
+    <div
+      className={`flex justify-between items-center w-screen px-16 bg-green-400 text-white h-24 ${props.className}`}
+    >
       <div>Dashboard</div>
       <div>
         <form
@@ -15,7 +21,7 @@ async function HeaderNav() {
             await signOut();
           }}
         >
-          <button type="submit">Signout {user?.name}</button>
+          <button type="submit">{user?.name}, Signout</button>
         </form>
       </div>
     </div>
